@@ -1,0 +1,24 @@
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+$gap-sizes: 20;
+$padding-sizes: 20;
+
+// create gap classes for each size
+
+
+@for $i from 1 through $gap-sizes {
+  .gap-#{$i} {
+    gap: $i *0.25rem;
+  }
+}
+@for $i from 1 through $padding-sizes {
+  .p-#{$i} {
+    gap: $i *0.25rem;
+  }
+}
