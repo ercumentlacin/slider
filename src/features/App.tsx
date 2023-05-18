@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-shadow */
 /* eslint-disable react/no-array-index-key */
 import { useAppDispatch, useAppSelector } from '@/app/hook';
+import ScreenOne from '@/components/ScreenOne';
 import ScreenTwo from '@/components/ScreenTwo/ScreenTwo';
 import Split from 'react-split';
 import './app.scss';
@@ -37,7 +38,7 @@ function App() {
           dispatch(changeTopVerticalWindowValues(sizes));
         }}
       >
-        <div>Screen1</div>
+        <ScreenOne />
         <ScreenTwo />
       </Split>
 

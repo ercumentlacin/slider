@@ -1,0 +1,65 @@
+.screen1 {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+
+  select {
+    height: min-content;
+  }
+
+  select + div {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+
+  &__settings-wrapper {
+    position: relative;
+  }
+
+  .settings-wrapper {
+    display: none;
+  }
+
+  &__settings-dropdown {
+    display: none;
+    position: absolute;
+    background: #fff;
+    border: 1px solid #000;
+    padding: 0.5rem;
+  }
+
+  .settings-wrapper:checked ~ &__settings-dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 20ch;
+    right: 0;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 1rem;
+
+    th,
+    td {
+      text-align: left;
+      padding: 0.5rem;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    th {
+      background-color: darkgray;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+  }
+}
