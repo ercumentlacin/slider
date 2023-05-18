@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-shadow */
 /* eslint-disable react/no-array-index-key */
 import { useAppDispatch, useAppSelector } from '@/app/hook';
-import ScreenOne from '@/components/ScreenOne';
-import ScreenTwo from '@/components/ScreenTwo/ScreenTwo';
+import ScreenOne from '@/features/ScreenOne';
+import ScreenTwo from '@/features/ScreenTwo';
 import Split from 'react-split';
 import './app.scss';
 import {
