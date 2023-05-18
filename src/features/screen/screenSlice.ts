@@ -1,6 +1,6 @@
-import type { RootState } from '@/app/store';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
+import type { RootState } from '@/app/store';
 
 // Define a type for the slice state
 interface ScreenState {
@@ -12,7 +12,7 @@ interface ScreenState {
 const initialState: ScreenState = {
   x: 0,
   y: 0,
-}
+};
 
 export const screenSlice = createSlice({
   name: 'screen',
@@ -20,21 +20,21 @@ export const screenSlice = createSlice({
   initialState,
   reducers: {
     increment: (state) => {
-      state.x += 1
+      state.x += 1;
     },
     decrement: (state) => {
-      state.x -= 1
+      state.x -= 1;
     },
     // Use the PayloadAction type to declare the contents of `action.payload`
     incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.x += action.payload
+      state.x += action.payload;
     },
   },
-})
+});
 
-export const { increment, decrement, incrementByAmount } = screenSlice.actions
+export const { increment, decrement, incrementByAmount } = screenSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
-export const selectScreenX = (state: RootState) => state.screen.x
+export const selectScreenX = (state: RootState) => state.screen.x;
 
-export default screenSlice.reducer
+export default screenSlice.reducer;
