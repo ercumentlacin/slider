@@ -23,6 +23,15 @@ module.exports = {
     'react-refresh/only-export-components': 'warn',
     'no-param-reassign': 'off',
     'import/extensions': 'off',
+    'no-restricted-exports': 'off',
     'react/react-in-jsx-scope': 'off',
+      "import/order": ["error", {
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "external"
+          }
+        ]
+      }]
   },
 };
