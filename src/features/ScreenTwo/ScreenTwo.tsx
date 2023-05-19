@@ -40,12 +40,7 @@ export default function ScreenTwo() {
   }, [topVerticalWindowValues]);
 
   return (
-    <div
-      className="flex flex-col gap-4 screen2"
-      style={{
-        overflow: 'hidden',
-      }}
-    >
+    <section className="flex flex-col gap-4 screen2">
       <div className="flex flex-col gap-2">
         <h2>Settings</h2>
         {settingsFields.map((field, index) => (
@@ -64,6 +59,6 @@ export default function ScreenTwo() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

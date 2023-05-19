@@ -22,7 +22,7 @@ export default function ScreenOne() {
   }, [selectedHeaders]);
 
   return (
-    <div className="screen1">
+    <section className="screen1">
       <ScreenOneHeader
         {...{
           selectedContract,
@@ -38,6 +38,6 @@ export default function ScreenOne() {
           selectedContract,
         }}
       />
-    </div>
+    </section>
   );
 }

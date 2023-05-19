@@ -16,6 +16,14 @@ export default function ScreenOneHeader({
   selectedHeadersArray,
   setSelectedHeaders,
 }: ScreenOneHeaderProps) {
+  const onCheckboxChange =
+    (header: 'id' | 'contract' | 'offer' | 'data') => () => {
+      setSelectedHeaders((prev) => ({
+        ...prev,
+        [header]: prev[header] ? 0 : 1,
+      }));
+    };
+
   return (
     <div className="screen1__header">
       <select
@@ -34,6 +42,7 @@ export default function ScreenOneHeader({
         <div>
           <UploadIcon />
         </div>
+
         <label htmlFor="settings-wrapper" className="screen1__settings-wrapper">
           <SettingsIcon />
 
@@ -50,18 +59,14 @@ export default function ScreenOneHeader({
                   type="checkbox"
                   id={header}
                   checked={status === 1}
-                  onChange={() =>
-                    setSelectedHeaders((prev) => ({
-                      ...prev,
-                      [header]: prev[header] ? 0 : 1,
-                    }))
-                  }
+                  onChange={onCheckboxChange(header)}
                 />
                 {header}
               </label>
             ))}
           </div>
         </label>
+
         <div>
           <PlusIcon />
         </div>

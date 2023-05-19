@@ -19,8 +19,21 @@ export default function ScreenThree() {
     return objectEntries(selectedHeaders);
   }, []);
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const newContract: ScreenThreeData = {
+      id: faker.string.uuid(),
+      contract: String(formData.get('contract')!),
+      offer: String(formData.get('offer')!),
+      data: String(formData.get('data')!),
+    };
+
+    setData((prevData): ScreenThreeData[] => [...prevData, newContract]);
+  };
+
   return (
-    <div className="screen3">
+    <section className="screen3">
       <table>
         <tbody>
           {data.map((row) => (
@@ -35,23 +48,7 @@ export default function ScreenThree() {
 
       <div>
         {isFormVisible && (
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              const formData = new FormData(e.currentTarget);
-              const newContract: ScreenThreeData = {
-                id: faker.string.uuid(),
-                contract: String(formData.get('contract')!),
-                offer: String(formData.get('offer')!),
-                data: String(formData.get('data')!),
-              };
-
-              setData((prevData): ScreenThreeData[] => [
-                ...prevData,
-                newContract,
-              ]);
-            }}
-          >
+          <form onSubmit={handleSubmit}>
             <input name="contract" placeholder="contract" />
             <input name="offer" placeholder="offer" />
             <input name="data" placeholder="data" />
@@ -63,6 +60,6 @@ export default function ScreenThree() {
           Add Contract
         </button>
       </div>
-    </div>
+    </section>
   );
 }
