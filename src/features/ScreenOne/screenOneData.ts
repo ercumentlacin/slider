@@ -1,19 +1,17 @@
-import { faker } from '@faker-js/faker';
+import createData from '@/utils/createData';
 
-export const createScreenOneData = () => ({
-  id: faker.string.uuid(),
-  contract: faker.date.anytime().getFullYear(),
-  offer: faker.number.int(),
-  data: faker.string.fromCharacters(['Buy', 'Sale']),
-});
-
-const screenOneData = Array.from({ length: 10 }, createScreenOneData);
+const screenOneData = createData();
 
 export const uniqueContracts = [
   ...new Set(screenOneData.map((row) => row.contract)),
 ];
 
-export type ScreenOneData = ReturnType<typeof createScreenOneData> & {
+export type ScreenOneData = {
+  id: string;
+  contract: number;
+  offer: number;
+  data: string;
+} & {
   data: 'Buy' | 'Sale';
 };
 export type SelectedHeaders = Record<keyof ScreenOneData, 0 | 1>;

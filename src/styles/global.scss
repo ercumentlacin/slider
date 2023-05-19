@@ -1,11 +1,11 @@
 @import './reset.scss';
 @import './utils.scss';
 @import './headings.scss';
+@import './table.scss';
 
 *,
 *::before,
-*::after
- {
+*::after {
   box-sizing: border-box;
 }
 
@@ -14,5 +14,4 @@
   flex-direction: column;
   gap: 1rem;
   --halo: var(--topVerticalWindowValues);
-    
 }

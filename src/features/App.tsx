@@ -2,9 +2,8 @@
 /* eslint-disable react/no-array-index-key */
 import { useAppDispatch, useAppSelector } from '@/app/hook';
 import ScreenOne from '@/features/ScreenOne';
+import ScreenThree from '@/features/ScreenThree';
 import ScreenTwo from '@/features/ScreenTwo';
-import Split from 'react-split';
-import './app.scss';
 import {
   changeBottomVerticalWindowValues,
   changeHorizontalWindowValues,
@@ -12,7 +11,9 @@ import {
   selectBottomVerticalWindowValues,
   selectHorizontalWindowValues,
   selectTopVerticalWindowValues,
-} from './screen/screenSlice';
+} from '@/features/screen/screenSlice';
+import Split from 'react-split';
+import './app.scss';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -49,7 +50,7 @@ function App() {
           dispatch(changeBottomVerticalWindowValues(sizes));
         }}
       >
-        <div>Screen3</div>
+        <ScreenThree />
         <div>Screen4</div>
       </Split>
     </Split>
