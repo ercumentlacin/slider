@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-shadow */
 /* eslint-disable react/no-array-index-key */
 import { useAppDispatch, useAppSelector } from '@/app/hook';
+import ScreenFour from '@/features/ScreenFour';
 import ScreenOne from '@/features/ScreenOne';
 import ScreenThree from '@/features/ScreenThree';
 import ScreenTwo from '@/features/ScreenTwo';
@@ -51,7 +52,7 @@ function App() {
         }}
       >
         <ScreenThree />
-        <div>Screen4</div>
+        <ScreenFour />
       </Split>
     </Split>
   );
