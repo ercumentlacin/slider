@@ -1,6 +1,6 @@
 import screenOneData from '../screenOneData';
 
-interface ScreenOneTableProps {
+export interface ScreenOneTableProps {
   selectedHeadersArray: ['data' | 'id' | 'contract' | 'offer', 0 | 1][];
   selectedContract: string;
 }

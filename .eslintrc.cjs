@@ -1,5 +1,5 @@
 module.exports = {
-  env: { browser: true, es2020: true },
+  env: { browser: true, es2020: true, vi: true },
   extends: [
     'airbnb',
     'airbnb-typescript',
@@ -25,13 +25,16 @@ module.exports = {
     'import/extensions': 'off',
     'no-restricted-exports': 'off',
     'react/react-in-jsx-scope': 'off',
-      "import/order": ["error", {
-        "pathGroups": [
+    'import/order': [
+      'error',
+      {
+        pathGroups: [
           {
-            "pattern": "@/**",
-            "group": "external"
-          }
-        ]
-      }]
+            pattern: '@/**',
+            group: 'external',
+          },
+        ],
+      },
+    ],
   },
 };

@@ -22,7 +22,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*", "dist/*", ""]
-    }
+    },
+
+    "types": ["vitest/globals"]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

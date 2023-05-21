@@ -1,5 +1,5 @@
 import screenReducer from '@/features/screen/screenSlice';
-import { configureStore } from '@reduxjs/toolkit';
+import { PreloadedState, configureStore } from '@reduxjs/toolkit';
 import {
   FLUSH,
   PAUSE,
@@ -19,10 +19,19 @@ const persistConfig = {
 
 const persistedScreenReducer = persistReducer(persistConfig, screenReducer);
 
+export const reducer = {
+  screen: persistedScreenReducer,
+};
+
+export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
+  return configureStore({
+    reducer,
+    preloadedState,
+  });
+};
+
 export const store = configureStore({
-  reducer: {
-    screen: persistedScreenReducer,
-  },
+  reducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
@@ -35,3 +44,4 @@ export const persistor = persistStore(store);
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+export type AppStore = ReturnType<typeof setupStore>;

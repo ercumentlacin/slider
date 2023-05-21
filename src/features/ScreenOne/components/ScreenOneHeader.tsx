@@ -3,7 +3,7 @@ import { ReactComponent as SettingsIcon } from '@/assets/settings.svg';
 import { ReactComponent as UploadIcon } from '@/assets/upload.svg';
 import { SelectedHeaders, uniqueContracts } from '../screenOneData';
 
-interface ScreenOneHeaderProps {
+export interface ScreenOneHeaderProps {
   selectedContract: string;
   setSelectedContract: (value: React.SetStateAction<string>) => void;
   selectedHeadersArray: ['id' | 'contract' | 'offer' | 'data', 0 | 1][];
@@ -44,12 +44,13 @@ export default function ScreenOneHeader({
         </div>
 
         <label htmlFor="settings-wrapper" className="screen1__settings-wrapper">
-          <SettingsIcon />
+          <SettingsIcon aria-label="settings" />
 
           <input
             type="checkbox"
             id="settings-wrapper"
             className="settings-wrapper"
+            name="settings-wrapper"
           />
 
           <div className="screen1__settings-dropdown">

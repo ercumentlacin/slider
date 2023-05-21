@@ -6,6 +6,10 @@
     "src/**/*.js",
     "test/**/*.ts",
     "vite.config.ts",
-    ".eslintrc.cjs",
-  ]
+    "vitest.config.ts",
+    ".eslintrc.cjs"
+  ],
+  "compilerOptions": {
+    "types": ["vitest/globals", "@testing-library/jest-dom"]
+  }
 }
