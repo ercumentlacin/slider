@@ -1,2 +1,4 @@
 .eslintrc.cjs
 *.config.js
+coverage
+node_modules

@@ -1,5 +1,5 @@
 module.exports = {
-  env: { browser: true, es2020: true, vi: true },
+  env: { browser: true, es2020: true },
   extends: [
     'airbnb',
     'airbnb-typescript',
@@ -22,6 +22,7 @@ module.exports = {
   rules: {
     'react-refresh/only-export-components': 'warn',
     'no-param-reassign': 'off',
+    'react/jsx-props-no-spreading': 'off',
     'import/extensions': 'off',
     'no-restricted-exports': 'off',
     'react/react-in-jsx-scope': 'off',

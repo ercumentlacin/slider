@@ -1,5 +1,6 @@
-import { RootState, store } from '@/app/store';
-
+import { configureStore } from '@reduxjs/toolkit';
+import persistReducer from 'redux-persist/es/persistReducer';
+import storage from 'redux-persist/lib/storage';
 import reducer, {
   ScreenState,
   changeBottomVerticalWindowValues,
@@ -9,10 +10,6 @@ import reducer, {
   selectHorizontalWindowValues,
   selectTopVerticalWindowValues,
 } from './screenSlice';
-
-import { configureStore } from '@reduxjs/toolkit';
-import persistReducer from 'redux-persist/es/persistReducer';
-import storage from 'redux-persist/lib/storage';
 
 const persistConfig = {
   key: 'screen',
