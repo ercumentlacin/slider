@@ -2,7 +2,7 @@ import type { RootState } from '@/app/store';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
-interface ScreenState {
+export interface ScreenState {
   horizontalWindowValues: number[];
   topVerticalWindowValues: number[];
   bottomVerticalWindowValues: number[];
